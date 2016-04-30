@@ -404,6 +404,7 @@ void wirly_decode_stream(char* path, char* codec_str, char* srtp_crypto_str, cha
 	}
 	pj_strncpy(&output, &input, input.slen - pcap_ext.slen);
 	pj_strcat2(&output, ".wav");
+	output.ptr[output.slen] = '\0';
 
 	pj_pcap_filter_default(&filter);
 	filter.link = PJ_PCAP_LINK_TYPE_ETH;

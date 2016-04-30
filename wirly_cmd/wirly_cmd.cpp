@@ -10,7 +10,7 @@ int main()
 {
 	wirly_config cfg = { &log_cb };
 	wirly_init(&cfg);
-	wirly_decode_stream("C:\\projects\\fromFRStoSBC4500.pcap", "--codec=iLBC/8000", nullptr, nullptr);
+	wirly_decode_stream("C:\\users\\johan\\projects\\4500ilbcto-frs.pcap", "iLBC/8000", nullptr, nullptr);
 
 	getchar();
 
