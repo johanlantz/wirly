@@ -1,4 +1,3 @@
-#include "stdafx.h"
 #include "wirly.h"
 
 void test() {
