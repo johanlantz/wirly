@@ -88,10 +88,12 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;_USRDLL;LIBWIRLY_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(SolutionDir)third-party\pjproject\pjlib\include;$(SolutionDir)third-party\pjproject\pjsip\include;$(SolutionDir)third-party\pjproject\pjlib-util\include;$(SolutionDir)third-party\pjproject\pjmedia\include;$(SolutionDir)third-party\pjproject\pjnath\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>ws2_32.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -149,6 +151,11 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="wirly.c" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\third-party\pjproject\pjsip-apps\build\libpjproject.vcxproj">
+      <Project>{23d7679c-764c-4e02-8b29-bb882ceeefe2}</Project>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -1,5 +1,6 @@
 #include "wirly.h"
+#include <pjsua.h>
 
 void test() {
-	int i = 0;
+	int i = pjsua_call_get_count();
 }
