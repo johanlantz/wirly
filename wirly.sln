@@ -1,0 +1,41 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25123.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "libwirly", "libwirly\libwirly.vcxproj", "{04CC0F3D-7F97-4461-8321-CBE886C7F12E}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "wirly_cmd", "wirly_cmd\wirly_cmd.vcxproj", "{217B2551-3450-4C2F-8FC0-03A2C6785203}"
+	ProjectSection(ProjectDependencies) = postProject
+		{04CC0F3D-7F97-4461-8321-CBE886C7F12E} = {04CC0F3D-7F97-4461-8321-CBE886C7F12E}
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{04CC0F3D-7F97-4461-8321-CBE886C7F12E}.Debug|x64.ActiveCfg = Debug|x64
+		{04CC0F3D-7F97-4461-8321-CBE886C7F12E}.Debug|x64.Build.0 = Debug|x64
+		{04CC0F3D-7F97-4461-8321-CBE886C7F12E}.Debug|x86.ActiveCfg = Debug|Win32
+		{04CC0F3D-7F97-4461-8321-CBE886C7F12E}.Debug|x86.Build.0 = Debug|Win32
+		{04CC0F3D-7F97-4461-8321-CBE886C7F12E}.Release|x64.ActiveCfg = Release|x64
+		{04CC0F3D-7F97-4461-8321-CBE886C7F12E}.Release|x64.Build.0 = Release|x64
+		{04CC0F3D-7F97-4461-8321-CBE886C7F12E}.Release|x86.ActiveCfg = Release|Win32
+		{04CC0F3D-7F97-4461-8321-CBE886C7F12E}.Release|x86.Build.0 = Release|Win32
+		{217B2551-3450-4C2F-8FC0-03A2C6785203}.Debug|x64.ActiveCfg = Debug|x64
+		{217B2551-3450-4C2F-8FC0-03A2C6785203}.Debug|x64.Build.0 = Debug|x64
+		{217B2551-3450-4C2F-8FC0-03A2C6785203}.Debug|x86.ActiveCfg = Debug|Win32
+		{217B2551-3450-4C2F-8FC0-03A2C6785203}.Debug|x86.Build.0 = Debug|Win32
+		{217B2551-3450-4C2F-8FC0-03A2C6785203}.Release|x64.ActiveCfg = Release|x64
+		{217B2551-3450-4C2F-8FC0-03A2C6785203}.Release|x64.Build.0 = Release|x64
+		{217B2551-3450-4C2F-8FC0-03A2C6785203}.Release|x86.ActiveCfg = Release|Win32
+		{217B2551-3450-4C2F-8FC0-03A2C6785203}.Release|x86.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
