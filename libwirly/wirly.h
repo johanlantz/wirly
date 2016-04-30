@@ -18,7 +18,19 @@ extern "C" {
 #define WIRLY_DLL_EXPORT __declspec(dllimport)
 #endif
 
-WIRLY_DLL_EXPORT void test();
+typedef struct wirly_config {
+	/**
+	* Callback for receiving log output
+	*
+	* Default: NULL
+	*
+	*/
+	void(*log_cb)(char* msg);
+}wirly_config;
+
+WIRLY_DLL_EXPORT void wirly_init(wirly_config* cfg);
+
+WIRLY_DLL_EXPORT void wirly_decode_stream(char* path, char* codec, char* srtp_crypto_str, char* srtp_key_str);
 
 #ifdef __cplusplus
 }
