@@ -32,6 +32,11 @@ WIRLY_DLL_EXPORT void wirly_init(wirly_config* cfg);
 
 WIRLY_DLL_EXPORT void wirly_decode_stream(char* path, char* codec, char* srtp_crypto_str, char* srtp_key_str);
 
+/*
+ * Get a json array of supported codecs
+ */
+WIRLY_DLL_EXPORT char* wirly_get_codecs();
+
 #ifdef __cplusplus
 }
 #endif

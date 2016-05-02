@@ -1,3 +1,6 @@
 [submodule "third-party/pjproject"]
 	path = third-party/pjproject
 	url = https://github.com/pjsip/pjproject
+[submodule "third-party/codecs/opus/windows"]
+	path = third-party/codecs/opus/windows
+	url = https://git.xiph.org/opus.git

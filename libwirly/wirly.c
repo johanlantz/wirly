@@ -472,3 +472,45 @@ void wirly_decode_stream(char* path, char* codec_str, char* srtp_crypto_str, cha
 	cleanup();
 	return;
 }
+
+#define MAX_CODECS 32
+#define MAX_CODEC_BUF_SIZE 1024
+char* wirly_get_codecs() {
+	static char codec_buf[MAX_CODEC_BUF_SIZE] = {0};
+	unsigned i = 0;
+	pjmedia_codec_mgr *cmgr;
+	pjmedia_codec_info ci[MAX_CODECS];
+	unsigned count = MAX_CODECS;
+	pj_caching_pool c_pool;
+	pj_pool_t* pool;
+	pjmedia_endpt* media_endpoint;
+	pj_status_t status;
+	T(pj_init());
+
+	pj_caching_pool_init(&c_pool, NULL, 0);
+	pool = pj_pool_create(&c_pool.factory, "codec_enum", 1000, 1000, NULL);
+
+	T(pjlib_util_init());
+	T(pjmedia_endpt_create(&c_pool.factory, NULL, 0, &media_endpoint));
+	
+	T(pjmedia_codec_register_audio_codecs(media_endpoint, NULL));
+
+	cmgr = pjmedia_endpt_get_codec_mgr(media_endpoint);
+	T(pjmedia_codec_mgr_enum_codecs(cmgr,
+		&count,
+		ci,
+		NULL));
+
+	codec_buf[0] = '[';
+	for (i = 0; i < count; i++) {
+		pj_ansi_snprintf(codec_buf + strlen(codec_buf), MAX_CODEC_BUF_SIZE, "\"%.*s/%d\",", ci[i].encoding_name.slen, ci[i].encoding_name.ptr, ci[i].clock_rate);
+	}
+	codec_buf[strlen(codec_buf)-1] = ']';
+
+	pjmedia_endpt_destroy(media_endpoint);
+	pj_pool_release(pool);
+	pj_caching_pool_destroy(&c_pool);
+	pj_shutdown();
+
+	return codec_buf;
+}
