@@ -1,7 +1,7 @@
 # wirly
 Wirly is a library that converts audio streams from wireshark traces into wav files. This might be useful for manual inspection of audio quality problems in VoIP systems. 
 
-Wirly is a shared library using the media capabilities of the pjsip project. The supported codecs are:
+Wirly uses the media capabilities of the pjsip project and the supported codecs are:
 * PCMA/PCMU
 * GSM
 * iLBC
